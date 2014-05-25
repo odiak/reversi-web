@@ -61,7 +61,7 @@
     
     
     
-    importScripts('/lib/json2.js');
+    importScripts('lib/json2.js');
     importScripts('ioworker.js');
     re.io = IOWorker;
     
