@@ -1,0 +1,169 @@
+/* #mark ----- global ----- */
+
+body,
+html {
+    margin:  0;
+    padding: 0;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#wrapper {
+    padding: 10px;
+}
+
+
+/* #mark ----- links ----- */
+
+a:link,
+a:visited {
+    color: #22c;
+}
+
+a:hover {
+    color: #559;
+    text-decoration: none;
+}
+
+
+/* #mark ----- headings ----- */
+
+h1 {
+    margin: 5px 0 15px 0;
+}
+
+
+/* #mark ----- #controllers ----- */
+
+#controllers {
+	margin: 10px 0;
+}
+
+#controllers input[type=button] {
+	margin: 0;
+	vertical-align: bottom;
+	font-size: 18px;
+}
+
+
+/* #mark ----- #counter ----- */
+
+#counter {
+	padding-left: 20px;
+	vertical-align: bottom;
+	display: inline;
+	font-size: 18px;
+}
+
+
+/* #mark ----- #settings ----- */
+
+#settings {
+    margin:  0;
+    padding: 0;
+    display: none;
+    background: #eee;
+    width:  459px;
+    height: 459px;
+}
+
+#settings>.innerBox {
+    margin: 0;
+    padding: 30px 10px;
+}
+
+#settings table {
+    margin: auto;
+}
+
+#settings td {
+    padding: 5px 0;
+}
+
+
+/* #mark ----- #board ----- */
+
+#board {
+    margin:  0;
+    padding: 0;
+}
+
+#board table {
+	border-collapse: collapse;
+	background: #070;
+}
+
+#board table td {
+	padding: 0;
+	width:   54px;
+	height:  54px;
+	border:  3px solid #000;
+}
+
+#board table td div {
+	margin: 3px 3px;
+	width:  48px;
+	height: 48px;
+	border-radius: 24px;
+	background-color: transparent;
+	
+	-webkit-transform: scale(0, 0);
+	   -moz-transform: scale(0, 0);
+}
+
+#board table.enableAnimation td div {
+    -webkit-transition-property: all;
+	   -moz-transition-property: all;
+    
+	-webkit-transition-duration: 0.5s;
+	   -moz-transition-duration: 0.5s;
+	
+	-webkit-transition-delay: 0s;
+	   -moz-transition-delay: 0s;
+	
+	-webkit-transition-timing-function: ease;
+	   -moz-transition-timing-function: ease;
+}
+
+#board table td.black div {
+	background: #000;
+	-webkit-transform: scale(1, 1);
+	   -moz-transform: scale(1, 1);
+}
+
+#board table td.white div {
+	background: #fff;
+	-webkit-transform: scale(1, 1);
+	   -moz-transform: scale(1, 1);
+}
+
+#board table.showMovable td.movable div {
+	background: #ddd;
+	-webkit-transform: scale(0.5);
+	   -moz-transform: scale(0.5);
+	
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	     opacity: 0.5;
+}
+
+
+/* #mark ----- #message ----- */
+
+#message {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+
+/* #mark ----- #socialButtons ----- */
+
+#socialButtons {
+    margin-top: 20px;
+}
+
+
+/* #mark ----- classes ----- */
+
+.tac {
+    text-align: center;
+}

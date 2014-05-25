@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+	<head>
+		<meta charset="utf-8" />
+		<title>Reversi</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="/lib/jquery/jquery.min.js"></script>
+		<script src="/lib/jquery/plugins/jquery.create.js"></script>
+		<script src="/lib/jquery/plugins/jquery.easing.js"></script>
+		<script src="/lib/jquery/plugins/jquery.toggle.js"></script>
+		<script src="/lib/json2.js"></script>
+		<script src="ioworker.js"></script>
+		<script src="ui.js"></script>
+		<script src="/js/ga.js"></script>
+        <meta name="viewport" content="width=480" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Reversi</h1>
+			
+            <!--
+            <p style="font-weight:bold;">(New!) <a href="http://reversi.odiak.net/">Online Reversi</a> is now available! Let's play it!</p>
+            -->
+            
+			<p><a href="./about.html">about this game</a></p>
+			
+			<div id="controllers">
+				<input type="button" value="game start" class="gameStart" />
+				<input type="button" value="settings" class="showSettings" />
+				<div id="counter">
+					<span class="black">black: <span class="count">2</span></span>
+					<span class="white">white: <span class="count">2</span></span>
+				</div>
+			</div>
+			
+			<div id="settings">
+			    <div class="innerBox">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>black:</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="black" class="black player" checked="checked" />player
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="black" class="black computer" />computer
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>white:</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="white" class="white player" />player
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="white" class="white computer" checked="checked" />computer
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <label>
+                                        <input type="checkbox" class="enableAnimation" checked="checked" />enable animation
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <label>
+                                        <input type="checkbox" class="showMovable" checked="checked" />show movables
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+			    </div>
+			</div>
+			
+			<div id="board">loading ...</div>
+			
+			<div id="message"></div>
+			
+			<div id="socialButtons">
+			    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fodiak.net%2Freversi%2F&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21&amp;appId=297591163598193" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+			    
+			    <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="odiak_i">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			    
+			    <!-- Place this tag where you want the +1 button to render -->
+                <g:plusone size="medium" annotation="inline"></g:plusone>
+                
+                <!-- Place this render call where appropriate -->
+                <script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script>
+			</div>
+		</div>
+	</body>
+</html>
