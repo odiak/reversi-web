@@ -248,6 +248,7 @@
                 showSettingsBtn,
                 counterEl,
                 settingsOpen = false,
+                settingsAnimating = false,
                 during = 1000,
                 x,
                 y,
@@ -298,19 +299,31 @@
             });
 
             showSettingsBtn.addEventListener('click', function () {
+                if (settingsAnimating) {
+                    return;
+                }
+                settingsAnimating = true;
+
+                var pending = 2;
+                function onPanelTransitionDone() {
+                    if (--pending === 0) {
+                        settingsAnimating = false;
+                    }
+                }
+
                 if (settingsOpen) {
                     re.message.style.display = '';
                     if (counterEl) counterEl.style.display = '';
-                    slideUp(re.settings, during, function () {});
-                    slideDown(re.board, during, function () {});
+                    slideUp(re.settings, during, onPanelTransitionDone);
+                    slideDown(re.board, during, onPanelTransitionDone);
                     showSettingsBtn.value = 'settings';
                     gameStartBtn.disabled = false;
                     re.gWorker.send('resume');
                 } else {
                     re.message.style.display = 'none';
                     if (counterEl) counterEl.style.display = 'none';
-                    slideDown(re.settings, during, function () {});
-                    slideUp(re.board, during, function () {});
+                    slideDown(re.settings, during, onPanelTransitionDone);
+                    slideUp(re.board, during, onPanelTransitionDone);
                     showSettingsBtn.value = 'hide settings';
                     gameStartBtn.disabled = true;
                     re.gWorker.send('pause');
